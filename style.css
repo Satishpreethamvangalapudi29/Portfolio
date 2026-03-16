@@ -1,3 +1,45 @@
+/* =========================================
+   Theme Configuration (CSS Variables)
+   ========================================= */
+:root {
+    /* Un-comment the theme you want to use! */
+
+    /* 1. NEON CYBERPUNK */
+    /* --primary-color: #00e1ff; */
+    /* --secondary-color: #ff00ea; */
+    /* --bg-dark: #050505; */
+
+    /* 2. ORIGINAL PURPLE/BLUE */
+    /* --primary-color: #667eea; */
+    /* --secondary-color: #764ba2; */
+    /* --bg-dark: #0a0a0a; */
+
+    /* 3. OCEANIC DEEP */
+    /* --primary-color: #00f2fe; */
+    /* --secondary-color: #4facfe; */
+    /* --bg-dark: #08141e; */
+
+    /* 4. GOLD & ONYX (Premium & Executive) */
+    /* --primary-color: #fbbf24; */
+    /* --secondary-color: #f59e0b; */
+    /* --bg-dark: #121212; */
+
+    /* 5. MONOCHROMATIC SLATE (Ultra-Minimalist) */
+    /* --primary-color: #e2e8f0; */
+    /* --secondary-color: #94a3b8; */
+    /* --bg-dark: #0f172a; */
+
+    /* 6. EMERALD & MINT (Modern Tech) */
+    /* --primary-color: #34d399; */
+    /* --secondary-color: #059669; */
+    /* --bg-dark: #022c22; */
+
+    /* 7. SUNSET BLAZE (Creative & Energetic) (Currently Active) */
+    --primary-color: #ff512f;
+    --secondary-color: #dd2476;
+    --bg-dark: #110914;
+}
+
 /* Certifications Section */
 .certifications {
     background: rgba(255, 255, 255, 0.02);
@@ -611,9 +653,9 @@
 }
 
 /* Focus styles for accessibility */
-.btn:focus,
-.nav-link:focus,
-.cert-link:focus {
+.btn:focus-visible,
+.nav-link:focus-visible,
+.cert-link:focus-visible {
     outline: 2px solid #667eea;
     outline-offset: 2px;
 }
@@ -659,6 +701,7 @@ body {
     background-color: #0a0a0a;
     overflow-x: hidden;
     animation: pageLoad 0.8s ease-out;
+    cursor: url('https://ani.cursors-4u.net/symbols/sym-1/sym54.png'), auto;
 }
 
 @keyframes pageLoad {
@@ -2181,3 +2224,41 @@ section {
 .cert-logo .fa-alibaba {
     color: #ff6a00; /* Alibaba orange */
 }
+
+/* Custom Cursor */
+.cursor-dot,
+.cursor-circle {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 1100;
+}
+
+.cursor-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.cursor-circle {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--primary-color);
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+}
+
+.cursor-dot.expand {
+    transform: scale(1.5);
+}
+
+.cursor-circle.expand {
+    width: 40px;
+    height: 40px;
+    opacity: 0.5;
+}
+
+
